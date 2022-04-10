@@ -26,19 +26,22 @@
           <h3>Demo</h3>
           <div id="example_html">
               <label>default(en)</label>
-              <input class="input-medium" type="text" 
-                data-provide="datepicker">
+              <input class="input-medium datepicker-en" type="text">
 
               <label>th</label>
-              <input class="input-medium" type="text" 
-                data-provide="datepicker" data-date-language="th">
+              <input class="input-medium datepicker-th" type="text">
 
               <label>th-th</label>
-              <input class="input-medium" type="text" 
-                data-provide="datepicker" data-date-language="th-th">
+              <input class="input-medium datepicker-th-th" type="text">
 
               <label>inline en-th</label>
-              <div class="datepicker" data-date-language="en-th"></div>
+              <div class="datepicker-en-th"></div>
+
+              <label>month</label>
+              <input class="input-medium datepicker-month" type="text">
+
+              <label>year</label>
+              <input class="input-medium datepicker-year" type="text">
           </div>
         </div>
         <div class="span8">
@@ -55,7 +58,7 @@
       <div class="row-fluid">
         <hr>
         <footer>
-          <p>maintained by <a href="//github.com/jojosati">jojosati</a></p>
+          <p>maintained by <a href="//github.com/komgrip">komgrip</a></p>
         </footer>
       </div>
     </div>
@@ -69,7 +72,55 @@
 
     <script id="example_script"  type="text/javascript">
       function demo() {
-        $('.datepicker').datepicker();
+        $('.datepicker-en').datepicker({
+            language: 'en',
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            endDate: new Date(),
+            todayHighlight: true,
+            weekStart: 1
+        })
+
+        $('.datepicker-th').datepicker({
+            language: 'th',
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            endDate: new Date(),
+            todayHighlight: true,
+            weekStart: 1
+        })
+
+        $('.datepicker-th-th').datepicker({
+            language: 'th-th',
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            endDate: new Date(),
+            todayHighlight: true,
+            weekStart: 1
+        })
+
+        $('.datepicker-en-th').datepicker({
+            language: 'en-th',
+            format: 'dd/mm/yyyy',
+            autoclose: true,
+            endDate: new Date(),
+            todayHighlight: true,
+            weekStart: 1
+        })
+
+        $('.datepicker-month').datepicker({
+            language: 'th-th',
+            format: 'mm/yyyy',
+            viewMode: 'months',
+            minViewMode: 'months',
+        })
+
+        $('.datepicker-year').datepicker({
+            language: 'th-th',
+            format: 'yyyy',
+            viewMode: 'years',
+            minViewMode: 'years',
+        })
       }
     </script>
 
